@@ -1,0 +1,39 @@
+@mixin emphasis($color: #ff3131)
+  color: $color
+  font-weight: 800
+
+@mixin icon-preset($size: 2rem)
+  &>svg
+    fill: currentColor
+    width: $size
+    height: $size
+    display: inline-block
+
+@mixin lg-screens-pseudo($property, $value, $pseudo)
+  &:#{$pseudo}
+    @media screen and (min-width: 720px)
+      #{$property}: $value
+
+@mixin lg-screens($property, $value)
+    @media screen and (min-width: 720px)
+      #{$property}: $value
+
+@mixin lg-screens-list($properties)
+  @each $property, $value in $properties
+    @media screen and (min-width: 720px)
+      #{$property}: $value
+
+@mixin on-hover($property, $value)
+  &:hover
+    #{$property}: $value
+
+@mixin flex-vertical-box()
+  &
+    display: flex
+    flex-direction: column
+
+@mixin flex-center-items()
+  &
+    display: flex
+    align-items: center
+    justify-content: center
