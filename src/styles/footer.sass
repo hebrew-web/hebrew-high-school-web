@@ -1,2 +1,84 @@
 @use 'base'
 @use 'mixins'
+
+div.footer
+    padding: 0.5rem
+    padding-bottom: 0.25rem
+    margin-top: auto
+    display: flex
+    flex-direction: column
+    position: relative
+    background: darken(base.$secondary, 40)
+
+    $text: #ffffff
+    $left-margin: 1.5rem
+    $light-border: 1px solid darken(base.$secondary, 35)
+    $social-top-padding: 0.75rem
+
+    & > div.meta
+        margin: 0
+        width: 100%
+        padding: 0.25rem 0.125rem
+        color: $text
+        display: flex
+        flex-direction: column
+        @include mixins.lg-screens(flex-direction, row)
+        @include mixins.lg-screens(width, 90%)
+        @include mixins.lg-screens(margin, auto)
+        
+        &>div:first-child
+            display: flex
+            border-bottom: $light-border
+            @include mixins.icon-preset(6rem)
+            @include mixins.lg-screens-specific
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                border-bottom: none
+                padding-top: $social-top-padding
+                border-right: $light-border
+                width: 50%
+                @include mixins.icon-preset(10rem)
+
+            &>svg.map
+                margin-left: $left-margin
+                justify-self: end
+                margin-right: calc($left-margin / 2)
+
+        &>div>span
+            padding: 0.5rem 0.125rem
+            align-self: center
+        
+        &>div.social-media
+            padding-top: $social-top-padding
+            display: flex
+            flex-direction: column
+            @include mixins.lg-screens(justify-content, space-between)
+            @include mixins.lg-screens(width, 50%)
+            width: 100%
+
+            &>a
+                display: flex
+                justify-content: space-between
+                margin: 0.5rem
+                margin-right: auto
+                margin-left: calc($left-margin + 0.5rem)
+                @include mixins.icon-preset(1.5rem)
+
+                &:hover>svg
+                    color: lighten(base.$secondary, 35)
+                
+                &>span
+                    padding: 0.125rem
+                    margin: 0.125rem
+                    margin-left: calc($left-margin / 2)
+    
+    & > div.copyright
+        margin-top: 2rem
+        text-align: center
+        span
+            padding-top: 0.125rem
+            color: $text
+            font-size: 0.866rem
+            font-weight: bold
+            display: block

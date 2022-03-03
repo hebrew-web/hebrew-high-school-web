@@ -5,33 +5,36 @@ $spacing: 2.5rem
 $spacing-sm: 1.75rem
 
 body
-    background: url('../icons/hhs-body.svg')
-    background-attachment: fixed
-    background-repeat: no-repeat
-    background-position: center
+    background: url('../icons/hhs-body.png')
 
 .main
-    width: 100vw
+    width: 100%
     height: 100vh
     position: relative
-    background: linear-gradient(65deg, lighten(base.$base, 6), lighten(base.$secondary, 4))
+    background: linear-gradient(35deg, lighten(base.$base, 6), lighten(base.$secondary, 4))
     display: flex
     flex-direction: column
     @include mixins.lg-screens(flex-direction, row)
     
     & > div.icon-container
+        perspective: 2000px
         height: 100%
         width: 100%
         position: absolute
         z-index: 0
+        filter: blur(0.5px)
+
+        @include mixins.lg-screens(height, auto)
+        @include mixins.lg-screens(position, relative)
+        @include mixins.lg-screens(width, calc((100% - (7/11)*100%)))
+
+
         & > svg
             width: 100%
             height: 100%
             color: #000000
             opacity: 0.2
-        @include mixins.lg-screens(height, auto)
-        @include mixins.lg-screens(position, relative)
-        @include mixins.lg-screens(width, calc((100% - (7/11)*100%)))
+            transform-style: preserve-3d
         
 
     & > div.inner // Inner div
@@ -42,16 +45,19 @@ body
         align-items: center
         flex-direction: column
         position: relative
+
+
         @include mixins.lg-screens(height, auto)
         @include mixins.lg-screens(width, calc(100% - ((4/11)*100%)))
 
         & > div // div with name and motto text
             padding: calc($spacing-sm - 1rem) $spacing-sm
-            @include mixins.lg-screens(padding, $spacing)
-
             width: 100%
             margin-bottom: 0.5rem
             text-align: center
+            transition: all 0.5s ease-in
+            
+            @include mixins.lg-screens(padding, $spacing)
             @include mixins.lg-screens(text-align, left)
             h1
                 font-size: 3.75rem
@@ -60,6 +66,7 @@ body
                 color: base.$text-white
                 margin-bottom: 1rem
             div 
+                transition: all 0.5s ease-in
                 &>span
                     color: base.$text-gray
                     font-size: 1.35rem
@@ -75,11 +82,13 @@ body
             font-size: 1rem
             color: base.$text-white
             background-color: lighten(base.$tetiary, 4)
-            box-shadow: 0 0 10px 1px #0c0c0c60
+            box-shadow: 0 0 4px 0 #0c0c0c60
             margin-left: $spacing-sm
             margin-right: auto
             margin-left: auto
+            margin-top: 1rem
             border-radius: 7px
+            transition: all 0.5s ease-in
 
             @include mixins.on-hover(background-color, lighten(base.$tetiary, 10))
             @include mixins.lg-screens(margin-left, $spacing)

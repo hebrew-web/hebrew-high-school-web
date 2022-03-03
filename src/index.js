@@ -4,12 +4,14 @@ import Landing from './components/landing-page';
 import reportWebVitals from './reportWebVitals';
 import NavBar from './components/navbar';
 import About from './components/about-page';
+import Footer from './components/footer';
 
 ReactDOM.render(
   <React.StrictMode>
    <Landing />
    <NavBar />
    <About />
+   <Footer />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,10 +1,27 @@
+@use 'base' as main
+
 @mixin emphasis($color: #ff3131)
   color: $color
   font-weight: 800
 
-@mixin icon-preset($size: 2rem)
+@mixin icon-preset($size: 2rem, $color: true, $stroke: false)
   &>svg
-    fill: currentColor
+    @if $color == tetiary
+      fill: main.$tetiary
+      @if $stroke == true
+        stroke: main.$tetiary
+    @else if $color == secondary
+      fill: main.$secondary
+      @if $stroke == true
+        stroke: main.$secondary
+    @else if $color == base
+      fill: main.$base
+      @if $stroke == true
+        stroke: main.$base
+    @else if $color == true
+      fill: currentColor
+      @if $stroke == true
+        stroke: currentColor
     width: $size
     height: $size
     display: inline-block
@@ -22,6 +39,10 @@
   @each $property, $value in $properties
     @media screen and (min-width: 720px)
       #{$property}: $value
+
+@mixin lg-screens-specific
+  @media screen and (min-width: 720px)
+    @content
 
 @mixin on-hover($property, $value)
   &:hover
