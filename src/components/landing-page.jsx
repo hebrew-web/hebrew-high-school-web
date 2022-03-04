@@ -10,7 +10,7 @@ export default function Landing (){
         new Typed('#typeText', {
            strings: [
             'Learning is fun.',
-            'Quality education brings out the best in them',
+            'Quality education brings out the <span class="emphasis">best </span> in them',
             "Education is the <span class='emphasis'>key</span> to sucess",
             "Education is <span class='emphasis'>empowerment</span>, empowerment is <span class='emphasis'>education</span>"],
            typeSpeed: 90,
@@ -35,11 +35,11 @@ export default function Landing (){
     return (
         <div className="main">
             <div className="icon-container">
-                <img src={ImageLink} alt="" />
+                <img src={ImageLink} alt="Hebrew Logo" />
             </div>
             <div className='inner'>
                 <div>
-                    <h1>Hebrew High School</h1>
+                    <h1>Hebrew Schools</h1>
                     <div>
                         <span id="typeText"></span>
                     </div>
