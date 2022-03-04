@@ -37,7 +37,7 @@ export default function NavBar(){
    }
    
    return (
-      <nav ref={nav}>
+      <nav ref={nav} className="hidden">
          <div>
             <img src="" alt="" />
             <div>

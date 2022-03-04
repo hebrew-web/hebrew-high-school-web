@@ -1,53 +1,17 @@
 @use 'mixins'
 @use 'base'
 
-div.about-card
-    $card-width: 90%
-    $image-width: 6rem
-    @include mixins.flex-vertical-box()
-    @include mixins.flex-center-items()
-    @media screen and (min-width: 720px)
-        $card-width: 20rem
-    width: $card-width
-    text-align: justify
-    padding: 1rem
-    border: 2px solid base.$secondary
-    box-shadow: 0 0 15px 0 #1112
-    -webkit-backdrop-filter: blur(2px)
-    backdrop-filter: blur(2px)
-    margin: 1rem
-    margin-top: 3rem
-    border-radius: 10px
-    transition: base.$transition-color
-    color: base.$text-black
-    position: relative
-    font-weight: 500
-        
-
-    &>div:nth-child(1)
-        background-color: #fff
-        border-radius: 50%
-        border: 2px solid base.$secondary
-        object-fit: contain
-        overflow: hidden
-        width: $image-width
-        height: $image-width
-        display: grid
-        place-items: center
-        margin: auto
-        margin-bottom: 0.5rem
-        position: absolute
-        left: calc( $card-width/2 - $image-width)
-        right: calc( $card-width/2 - $image-width) 
-        top: calc($image-width/-2)
-
-    & > div + div
-        margin-top: calc($image-width/2 - 5px)
-        margin-bottom: calc(($image-width/4 - 5px))
-        font-size: 1.1rem
-
 div.about-page
-    display: flex
-    flex-wrap: wrap
-    flex-basis: 90%
-    justify-content: center
+    section
+        &:not(:first-child)
+            margin-top: 2rem
+        &>h2
+            font-size: 2rem
+            padding-left: 0.25rem
+        &>p
+            font-size: 1.1rem
+            text-align: justify
+    padding: 1rem
+
+    span.emphasis
+        @include mixins.emphasis(#862ff7)

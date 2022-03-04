@@ -1,66 +1,26 @@
 
 import '../styles/about-page.sass'
 
-function AboutCard({ text, imageLink }, key) {
-    console.log(text, imageLink)
-    return (
-        <div className="about-card" key={key}>
-            <div>
-                <img src={imageLink} alt="" />
-            </div>
-            <div>
-                {text}
-            </div>
-        </div>
-    )
-}
 
 function About() {
-    const data = [
-        {
-            imageLink: '/favicon.ico',
-            text: `
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-             Aliquam eveniet incidunt perferendis eaque nam ea accusamus
-             rem, quasi dolores temporibus alias quae amet iste ut
-             reiciendis debitis commodi, impedit ratione.
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-             Aliquam eveniet incidunt perferendis eaque nam ea accusamus
-             rem, quasi dolores temporibus alias quae amet iste ut
-             reiciendis debitis commodi, impedit ratione.
-            `
-        },
-        {
-            imageLink: '/favicon.ico',
-            text: `
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-             Aliquam eveniet incidunt perferendis eaque nam ea accusamus
-             rem, quasi dolores temporibus alias quae amet iste ut
-             reiciendis debitis commodi, impedit ratione.
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-             Aliquam eveniet incidunt perferendis eaque nam ea accusamus
-             rem, quasi dolores temporibus alias quae amet iste ut
-             reiciendis debitis commodi, impedit ratione.
-            `
-        },
-        {
-            imageLink: '/favicon.ico',
-            text: `
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-             Aliquam eveniet incidunt perferendis eaque nam ea accusamus
-             rem, quasi dolores temporibus alias quae amet iste ut
-             reiciendis debitis commodi, impedit ratione.
-             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-             Aliquam eveniet incidunt perferendis eaque nam ea accusamus
-             rem, quasi dolores temporibus alias quae amet iste ut
-             reiciendis debitis commodi, impedit ratione.
-            `
-        },
-    ]
-
     return (
         <div className='about-page'>
-            {data.map((content, index) => AboutCard(content, index))}
+            <section>
+                <h2>About us</h2>
+                <p>
+                    <span className="emphasis">Hebrew High School </span> 
+                    is one of the states leading private school. Tailored with the best teachers, serene laboratories with adequate equipments
+                    to supply your ward with quality and give them best form of education possible.
+                </p>
+            </section>
+            <section>
+                <h2>Our mission</h2>
+                <p>
+                    Our mission as a school is to ensure that all students from <span className="emphasis">toddler </span> 
+                    to <span className="emphasis">teenager </span> are taught till the best in them
+                    is unleashed. With God by our side, your ward will recieve the best education availiable.
+                </p>
+            </section>
         </div>
     )
 }

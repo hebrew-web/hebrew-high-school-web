@@ -14,7 +14,7 @@ nav
     background-color: lighten(base.$secondary, 55)
     z-index: 100
     margin-bottom: 5px
-    transition: base.$transition-size
+    transition: all 500ms ease-in
     border-bottom: 2px solid transparent
     border-bottom-right-radius: 7px
     border-bottom-left-radius: 7px
@@ -22,7 +22,20 @@ nav
     @include lg-screens(flex-direction, row)
 
     &.hidden
-        visibility: hidden
+        transition: all 500ms ease-in
+        box-shadow: none
+        button
+            display: none
+        div > div
+            display: flex
+            align-items: center
+            justify-content: space-between
+            span:nth-child(2)
+                font-size: 1rem
+                color: #555
+            width: 98%
+            @include mx-auto
+            flex-direction: row
 
     &>div
         width: 100%
@@ -77,9 +90,15 @@ nav
             padding: 0
             margin-top: 0
             border-top-width: 0
-
-        @include lg-screens(max-height, 5rem!important)            
-        @include lg-screens-list([[padding-top, 0], [margin-top, 0], [border, none],[justify-content, space-evenly], [width, 40%], [flex-direction, row]])
+       
+        @include lg-screens-specific
+            max-height: 5rem
+            width: 40%
+            border: none
+            padding-top: 0
+            margin-top: 0
+            justify-content: space-evenly
+            flex-direction: row
         li
             border-radius: 5px
             display: flex
@@ -90,8 +109,7 @@ nav
 
             &>a
                 padding: 0.75rem 0.5rem
-                width: 100%
-                height: 100%
+                @include full
                 @include on-hover(color, lighten(base.$base, 15))
             &.active
                 color: base.$base

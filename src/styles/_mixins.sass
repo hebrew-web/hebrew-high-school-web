@@ -1,7 +1,11 @@
 @use 'base' as main
 
-@mixin emphasis($color: #ff3131)
-  color: $color
+@mixin emphasis($color: #6ee3ff, $light: true)
+  $color-2: #f72222
+  @if $light
+    color: $color
+  @else
+    color: $color-2
   font-weight: 800
 
 @mixin icon-preset($size: 2rem, $color: true, $stroke: false)
@@ -43,6 +47,17 @@
 @mixin lg-screens-specific
   @media screen and (min-width: 720px)
     @content
+
+@mixin full
+  width: 100%
+  height: 100%
+
+@mixin mx-auto
+  margin-left: auto 
+  margin-right: auto
+@mixin flex-center-all
+  justify-content: center
+  align-items: center
 
 @mixin on-hover($property, $value)
   &:hover
