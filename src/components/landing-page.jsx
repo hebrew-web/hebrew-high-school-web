@@ -5,12 +5,6 @@ import Typed from "typed.js";
 import 'animate.css/animate.min.css'
 import '../styles/landing-page.sass'
 
-function Contact(){
-    return (
-        <div></div>
-    )
-}
-
 export default function Landing (){
     useEffect(function () {
         new Typed('#typeText', {
