@@ -9,8 +9,13 @@ function About() {
                 <h2>About us</h2>
                 <p>
                     <span className="emphasis">Hebrew High School </span> 
-                    is one of the states leading private school. Tailored with the best teachers, serene laboratories with adequate equipments
-                    to supply your ward with quality and give them best form of education possible.
+                    is a sub division of Hebrew Group of Schools which consists of a nursery/creche, primary and also a secondary school. 
+                    It is <span className="emphasis">highly rated </span> among other schools 
+                    for it's <span className="emphasis">outstanding results </span>based on an external level. 
+                    It has an assuring and conducive environment with serene <span className="emphasis">laboratories</span>
+                    with adequate equipments and practice areas to protrude
+                    the best result in your child/ward tailored with <span className="emphasis">the best teachers </span>, 
+                    to supply your ward with quality and give them <span className="emphasis">best</span> form of education possible.
                 </p>
             </section>
             <section>

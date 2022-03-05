@@ -5,6 +5,12 @@ import Typed from "typed.js";
 import 'animate.css/animate.min.css'
 import '../styles/landing-page.sass'
 
+function Contact(){
+    return (
+        <div></div>
+    )
+}
+
 export default function Landing (){
     useEffect(function () {
         new Typed('#typeText', {
@@ -50,7 +56,7 @@ export default function Landing (){
                     </a>
                 </button>
             </div>
-            <button aria-label='Contact us' className='contact-button animate__slideInLeft animate__faster animate__animated'>
+            <button aria-label='Contact us' className='contact-button animate__fadeInLeft animate__faster animate__animated'>
                 <FaPhoneAlt />
             </button>
             <svg version="1.1" preserveAspectRatio='none' viewBox="0 0 97.631 8.4667" xmlns="http://www.w3.org/2000/svg">
