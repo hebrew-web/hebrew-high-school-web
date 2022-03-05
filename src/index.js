@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import NavBar from './components/navbar';
 import About from './components/about-page';
 import Footer from './components/footer';
+import './styles/base.sass'
 
 ReactDOM.render(
   <React.StrictMode>
