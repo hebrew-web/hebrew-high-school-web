@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import '../styles/navbar.sass'
 
 const MenuIcon = (
@@ -28,13 +28,16 @@ export default function NavBar(){
       link.parentElement.classList.add('active') 
       setMenuState(false) 
    }
-   document.onscroll = (ev)=>{
-      if(nav.current.offsetTop>window.innerHeight){
-         nav.current.classList.remove('hidden')
-      }else{
-         nav.current.classList.add('hidden')
-      }
-   }
+
+   useEffect(()=>{
+      let observer = new IntersectionObserver(([el])=>{
+         let classList = el.target.classList
+         if(el.intersectionRatio < 1) classList.remove('hidden')
+         else classList.add('hidden')
+      }, {threshold: [1]})
+      observer.observe(nav.current)
+   }, [])
+
    
    return (
       <nav ref={nav} className="hidden">

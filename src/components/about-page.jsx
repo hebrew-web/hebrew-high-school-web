@@ -4,7 +4,7 @@ import '../styles/about-page.sass'
 
 function About() {
     return (
-        <div className='about-page'>
+        <div className='about-page' id="about">
             <section>
                 <h2>About us</h2>
                 <p>
@@ -14,8 +14,8 @@ function About() {
                     for it's <span className="emphasis">outstanding results </span>based on an external level. 
                     It has an assuring and conducive environment with serene <span className="emphasis">laboratories </span>
                     with adequate equipments and practice areas to protrude
-                    the best result in your child/ward tailored with <span className="emphasis">the best teachers </span>, 
-                    to supply your ward with quality and give them <span className="emphasis">best </span> form of education possible.
+                    the best result in your child/ward tailored with <span className="emphasis">the best teachers, </span>
+                    to supply your ward with quality learning and give them <span className="emphasis">best</span> form of education possible.
                 </p>
             </section>
             <section>
