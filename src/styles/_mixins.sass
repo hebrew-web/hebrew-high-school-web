@@ -1,4 +1,4 @@
-@use 'defs' as main
+@use 'colors'
 
 @mixin emphasis($color: #6ee3ff, $light: true)
   $color-2: #f72222
@@ -11,17 +11,17 @@
 @mixin icon-preset($size: 2rem, $color: true, $stroke: false)
   &>svg
     @if $color == tetiary
-      fill: main.$tetiary
+      fill: colors.$tetiary
       @if $stroke == true
-        stroke: main.$tetiary
+        stroke: colors.$tetiary
     @else if $color == secondary
-      fill: main.$secondary
+      fill: colors.$secondary
       @if $stroke == true
-        stroke: main.$secondary
+        stroke: colors.$secondary
     @else if $color == base
-      fill: main.$base
+      fill: colors.$base
       @if $stroke == true
-        stroke: main.$base
+        stroke: colors.$base
     @else if $color == true
       fill: currentColor
       @if $stroke == true
@@ -47,7 +47,9 @@
 @mixin lg-screens-specific
   @media screen and (min-width: 720px)
     @content
-
+@mixin on-focus($property,$value)
+  &:focus
+    #{$property}: $value
 @mixin full
   width: 100%
   height: 100%

@@ -1,18 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Landing from './components/landing-page';
 import reportWebVitals from './reportWebVitals';
 import NavBar from './components/navbar';
 import About from './components/about-page';
 import Footer from './components/footer';
-import './styles/base.sass'
+import ContactView from './components/contact-view';
+import anime from 'animejs';
+import './styles/base.sass';
+
+function Main() {
+  let [showContact, setContactState] = useState(false)
+  function closeContact() {
+    anime({
+      targets: "#contact-view",
+      opacity: [1, 0],
+      easing: 'linear',
+      duration: 200,
+      complete: () => {
+        document.body.style = "overflow:unset;height:auto;"
+        setContactState(false)
+      }
+    })
+  }
+  function contactToggle(){
+    setContactState(true)
+  }
+  return (
+    <>
+      {showContact &&
+        <ContactView
+          close={closeContact}
+        />}
+      <Landing contactToggle={contactToggle}/>
+      <NavBar />
+      <About />
+      <Footer />
+    </>
+  )
+}
 
 ReactDOM.render(
   <React.StrictMode>
-   <Landing />
-   <NavBar />
-   <About />
-   <Footer />
+    <Main />
   </React.StrictMode>,
   document.getElementById('root')
 );

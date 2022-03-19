@@ -1,4 +1,4 @@
-@use 'defs' as base 
+@use 'colors'
 @import 'mixins'
 
 nav
@@ -7,13 +7,10 @@ nav
     justify-content: space-between
     align-items: center
     padding: 1rem
-    box-shadow: 0 0 10px 0 #00000057
-    margin-bottom: 0.75rem
     position: sticky
     top: -1px
-    background-color: lighten(base.$secondary, 55)
+    background-color: lighten(colors.$secondary, 55)
     z-index: 100
-    margin-bottom: 5px
     transition: all 500ms ease-in
     border-bottom: 2px solid transparent
     border-bottom-right-radius: 7px
@@ -21,11 +18,29 @@ nav
 
     @include lg-screens(flex-direction, row)
 
+    &::after
+        content: ''
+        position: absolute
+        inset: 0
+        background: transparent
+        opacity: 1
+        z-index: -1
+        box-shadow: 0 0 10px 0 #000000
+        border-bottom-right-radius: 7px
+        border-bottom-left-radius: 7px
+
     &.hidden
-        transition: all 500ms ease-in
-        box-shadow: none
+        transition: all 200ms ease-in
+        padding: 1.125rem auto
+        margin-bottom: -25px
+        &::after
+            opacity: 0
         button
             display: none
+        div 
+            width: 100%
+        ul
+            width: 0
         div > div
             display: flex
             align-items: center
@@ -36,6 +51,7 @@ nav
             width: 98%
             @include mx-auto
             flex-direction: row
+            height: calc(1.5rem + 0.75rem + .25rem + 1px)
 
     &>div
         width: 100%
@@ -47,7 +63,7 @@ nav
             flex-direction: column
             span:nth-child(1)
                 font-size: 1.5rem
-                @include emphasis(base.$base)
+                @include emphasis(colors.$base)
             span:nth-child(2)
                 font-size: 0.75rem
         &>button
@@ -63,7 +79,7 @@ nav
 
             @include on-hover(color, lighten($color, 10))
             @include on-hover(border-color, lighten($color, 10))
-            @include on-hover(background-color, lighten(base.$light-tetiary, 50))
+            @include on-hover(background-color, lighten(colors.$light-tetiary, 50))
             @include icon-preset()
             @include lg-screens(display, none)
 
@@ -92,6 +108,8 @@ nav
             border-top-width: 0
        
         @include lg-screens-specific
+            &[toggled="false"]
+                max-height: 5vh
             max-height: 5rem
             width: 40%
             border: none
@@ -105,11 +123,11 @@ nav
 
             @include lg-screens-list([[padding, auto], [padding, initial], [border-radius, 0]])
             @include lg-screens-pseudo(background-color, #0000!important, hover)
-            @include on-hover(background-color, lighten(base.$secondary, 48))
+            @include on-hover(background-color, lighten(colors.$secondary, 48))
 
             &>a
                 padding: 0.75rem 0.5rem
                 @include full
-                @include on-hover(color, lighten(base.$base, 15))
+                @include on-hover(color, lighten(colors.$base, 15))
             &.active
-                color: base.$base
+                color: colors.$base

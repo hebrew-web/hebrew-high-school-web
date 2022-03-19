@@ -1,4 +1,4 @@
-@use 'defs' as base
+@use 'colors'
 @use 'mixins'
 
 div.footer
@@ -8,11 +8,11 @@ div.footer
     display: flex
     flex-direction: column
     position: relative
-    background: darken(base.$secondary, 40)
+    background: darken(colors.$secondary, 40)
 
     $text: #ffffff
     $left-margin: 1.5rem
-    $light-border: 1px solid darken(base.$secondary, 35)
+    $light-border: 1px solid darken(colors.$secondary, 35)
     $social-top-padding: 0.75rem
 
     & > div.meta
@@ -66,7 +66,7 @@ div.footer
                 @include mixins.icon-preset(1.5rem)
 
                 &:hover>svg
-                    color: lighten(base.$secondary, 35)
+                    color: lighten(colors.$secondary, 35)
                 
                 &>span
                     padding: 0.125rem

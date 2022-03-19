@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+// import {ReactComponent as HHSIcon} from '../icons/hhs.svg'
 import '../styles/navbar.sass'
 
 const MenuIcon = (
@@ -32,17 +33,22 @@ export default function NavBar(){
    useEffect(()=>{
       let observer = new IntersectionObserver(([el])=>{
          let classList = el.target.classList
-         if(el.intersectionRatio < 1) classList.remove('hidden')
+         if(el.intersectionRatio <1) classList.remove('hidden')
          else classList.add('hidden')
       }, {threshold: [1]})
       observer.observe(nav.current)
+
+      let currNav = nav.current
+      return ()=>{
+         observer.unobserve(currNav)
+      }
    }, [])
 
    
    return (
       <nav ref={nav} className="hidden">
          <div>
-            <img src="" alt="" />
+            
             <div>
                <span>HHS</span>
                <span>Education is fun</span>
