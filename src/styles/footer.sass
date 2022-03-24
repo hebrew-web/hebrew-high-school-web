@@ -11,7 +11,7 @@ div.footer
     background: darken(colors.$secondary, 40)
 
     $text: #ffffff
-    $left-margin: 1.5rem
+    $left-margin: 1rem
     $light-border: 1px solid darken(colors.$secondary, 35)
     $social-top-padding: 0.75rem
 
@@ -21,6 +21,7 @@ div.footer
         padding: 0.25rem 0.125rem
         color: $text
         display: flex
+        flex-wrap: wrap
         flex-direction: column
         @include mixins.lg-screens(flex-direction, row)
         @include mixins.lg-screens(width, 90%)
@@ -38,6 +39,7 @@ div.footer
                 padding-top: $social-top-padding
                 border-right: $light-border
                 width: 50%
+                order: 2
                 @include mixins.icon-preset(10rem)
 
             &>svg.map
@@ -53,6 +55,7 @@ div.footer
             padding-top: $social-top-padding
             display: flex
             flex-direction: column
+            @include mixins.lg-screens(order, 3)
             @include mixins.lg-screens(justify-content, space-between)
             @include mixins.lg-screens(width, 50%)
             width: 100%

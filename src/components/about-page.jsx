@@ -1,7 +1,6 @@
 
 import '../styles/about-page.sass'
 
-
 function About() {
     return (
         <div className='about-page' id="about">
@@ -23,7 +22,7 @@ function About() {
                 <p>
                     Our mission as a school is to ensure that all students from <span className="emphasis">toddler </span> 
                     to <span className="emphasis">teenager </span> are taught till the best in them
-                    is unleashed. With God by our side, your ward will recieve the best education availiable.
+                    is unleashed. With God by our side, your ward will recieve the best education available.
                 </p>
             </section>
         </div>

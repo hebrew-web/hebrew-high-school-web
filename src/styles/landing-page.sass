@@ -15,9 +15,10 @@ $spacing-sm: 1.75rem
 
     &>svg
         fill: #fff
+        position: absolute
+        bottom: 0
         @include mixins.lg-screens(display, none)
     &>button.contact-button
-        cursor: pointer
         position: absolute
         bottom: 1vh
         right: 1.2vw
@@ -30,12 +31,14 @@ $spacing-sm: 1.75rem
         color: colors.$base
         display: flex
         opacity: 0.8
+        z-index: 1
         box-shadow: 0 3px 4px 0 #000000a6
-        transition: all 0.2s ease-in
+        transform: scale(0.9)
         backdrop-filter: blur(2px)
+        transition: all 0.2s ease-in
         &:hover
             opacity: 1
-            padding: 0.5rem
+            transform: scale(1)
             transform-origin: center
         @include mixins.flex-center-all
         @include mixins.icon-preset(1.25rem)

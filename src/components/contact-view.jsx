@@ -3,8 +3,8 @@ import { useEffect, useRef } from "react";
 import { FaFacebook, FaGoogle, FaWhatsapp } from 'react-icons/fa';
 import { BsX, BsCheck2 } from 'react-icons/bs'
 import '../styles/contact-view.sass'
-import '../styles/_custom-radio.sass'
-import '../styles/_social-btn.sass'
+import '../styles/components/_custom-radio.sass'
+import '../styles/components/_social-btn.sass'
 
 function CustomRadio({ label, name, setValue, id }) {
     return (

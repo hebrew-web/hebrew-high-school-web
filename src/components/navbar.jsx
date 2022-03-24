@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-// import {ReactComponent as HHSIcon} from '../icons/hhs.svg'
+//import {ReactComponent as HHSIcon} from '../icons/hhs.svg'
 import '../styles/navbar.sass'
 
 const MenuIcon = (
@@ -46,7 +46,7 @@ export default function NavBar(){
 
    
    return (
-      <nav ref={nav} className="hidden">
+      <nav ref={nav} className="hidden navigation-bar">
          <div>
             
             <div>
