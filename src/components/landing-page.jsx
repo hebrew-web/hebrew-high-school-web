@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import ImageLink from '../icons/hhs.png'
 import { FaPhoneAlt } from 'react-icons/fa'
 import Typed from "typed.js";
+import 'animate.css/animate.min.css'
 import '../styles/landing-page.sass'
 import Particles from 'react-tsparticles';
 import p_options from './data/landing-particles.json'
